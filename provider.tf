@@ -8,8 +8,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "remote-state-aws-dev-bucket-245758552785-us-east-1-an"        # Bucket name
-    key          = "roboshop-dev-bastion"                                        #Key has to be unique
+    bucket       = "remote-state-aws-dev-bucket-245758552785-us-east-1-an" # Bucket name
+    key          = "roboshop-dev-bastion"                                  #Key has to be unique
     region       = "us-east-1"
     encrypt      = true
     use_lockfile = true
@@ -18,5 +18,5 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-}   
+}
 

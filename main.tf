@@ -1,13 +1,13 @@
 
 resource "aws_instance" "bastion" {
-  ami           = local.ami_id
-  instance_type = "t3.micro"
-  subnet_id = local.public_subnet_ids
+  ami                    = local.ami_id
+  instance_type          = "t3.micro"
+  subnet_id              = local.public_subnet_ids
   vpc_security_group_ids = [local.bastion_security_group_id]
 
-  tags = merge (
+  tags = merge(
     {
-     Name = "${var.project}-${var.environment}-bastion"
+      Name = "${var.project}-${var.environment}-bastion"
     },
     local.common_tags
   )
