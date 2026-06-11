@@ -1,9 +1,4 @@
-.terraform/
-*.tfstate
-*.tfstate.*
-terraform.tfvars
-*.tfvars
-plan.txt
+terraform.tfstate
 # Terraform
 .terraform/
 *.tfstate
