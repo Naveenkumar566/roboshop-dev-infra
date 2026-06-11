@@ -1,0 +1,20 @@
+This file contains rules based what serevers are configured with.
+
+bastion:
+- name: bastion_internet                   #bastion accepts traffic from internet
+  port: 22
+  src: internet
+  dest: bastion
+mangodb:
+-  name: mongodb_bastion
+   port: 22
+   src: bastion
+   dest: mongodb
+-  name: mongodb_catalogue
+   port: 27017
+   src: catalogue
+   dest: mongodb
+-  name: mongodb_user
+   port: 27017
+   src: user
+   dest: mongodb
