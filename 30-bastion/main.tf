@@ -60,5 +60,5 @@ resource "aws_iam_instance_profile" "bastion" {
   name = "${var.project}-${var.environment}-bastion"
   role = aws_iam_role.bastion_role.name
 }
-
+  #check
 
