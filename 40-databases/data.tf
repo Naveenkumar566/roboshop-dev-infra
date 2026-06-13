@@ -25,3 +25,7 @@ data "aws_ssm_parameter" "database_subnet_ids" {
 data "aws_ssm_parameter" "mongodb_security_group_id" {
   name = "/${var.project}/${var.environment}/mongodb_security_group_id"
 }
+
+data "aws_ssm_parameter" "redis_security_group_id" {
+  name = "/${var.project}/${var.environment}/mongodb_security_group_id"
+}
