@@ -5,16 +5,18 @@ resource "aws_instance" "bastion" {
   subnet_id              = local.public_subnet_ids
   vpc_security_group_ids = [local.bastion_security_group_id]
   iam_instance_profile   = aws_iam_instance_profile.bastion.name
-  root_block_device {
-    volume_size = 50
-    volume_type = "gp3"
-    tags = merge(
-    {
+  user_data = file(bastion.sh)                                                               #once instance is provisioned, AWS executes the commands inside the bastion.sh.
+
+    root_block_device {
+      volume_size = 50
+      volume_type = "gp3"
+      tags = merge(
+     {
       Name = "${var.project}-${var.environment}-bastion"                              #this tags are for EBS volume
-    },
-    local.common_tags
-  )
-}
+     },
+     local.common_tags
+    )
+  }
 
   tags = merge(
     {
