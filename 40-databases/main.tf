@@ -32,27 +32,21 @@ resource "terraform_data" "bootstrap" {
 
 
   provisioner "remote-exec" {
-<<<<<<< HEAD
     inline = [
       "chmod +x /tmp/bootstrap.sh",
       "sudo sh /tmp/bootstrap.sh mongodb"
     ]
-=======
     inline = [ 
         "chmod +x /tmp/bootstrap.sh",
         "sudo sh /tmp/bootstrap.sh mongodb"
      ]
->>>>>>> dfe6f43 (actions)
   }
 }
 
 
 
-<<<<<<< HEAD
 resource "aws_instance" "redis" { #redis  
-=======
 resource "aws_instance" "redis" {                                                   #redis  
->>>>>>> dfe6f43 (actions)
   ami                    = local.ami_id
   instance_type          = "t3.micro"
   subnet_id              = local.database_subnet_ids
